@@ -19,4 +19,6 @@ public interface BrandService {
     String test2();
 
     PageResult findPage(int pageNum, int pageSize);
+
+    public void add(TbBrand brand);
 }
