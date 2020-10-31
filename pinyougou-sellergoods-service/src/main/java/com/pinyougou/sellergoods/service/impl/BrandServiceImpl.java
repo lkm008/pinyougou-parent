@@ -13,6 +13,8 @@ import java.util.List;
 
 @Service
 public class BrandServiceImpl implements BrandService {
+
+
     @Autowired
     private TbBrandMapper brandMapper;
     @Override
@@ -28,5 +30,9 @@ public class BrandServiceImpl implements BrandService {
         PageHelper.startPage(pageNum, pageSize);
         Page<TbBrand> page = (Page<TbBrand>) brandMapper.selectByExample(null);
         return new PageResult(page.getTotal(),page.getResult());
+    }
+    @Override
+    public void add(TbBrand brand) {
+        brandMapper.insert(brand);
     }
 }
