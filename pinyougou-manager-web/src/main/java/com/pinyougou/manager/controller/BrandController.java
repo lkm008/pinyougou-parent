@@ -46,4 +46,23 @@ public class BrandController {
             return new Result(false, "增加失败");
         }
     }
+    @RequestMapping("/update")
+    public Result update(@RequestBody TbBrand brand){
+        try {
+            brandService.update(brand);
+            return new Result(true, "修改成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, "修改失败");
+        }
+    }
+    /**
+     * 获取实体
+     * @param id
+     * @return
+     */
+    @RequestMapping("/findOne")
+    public TbBrand findOne(Long id){
+        return brandService.findOne(id);
+    }
 }
