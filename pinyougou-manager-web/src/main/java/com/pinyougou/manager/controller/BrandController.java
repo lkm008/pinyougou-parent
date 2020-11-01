@@ -76,4 +76,15 @@ public class BrandController {
             return new Result(false, "删除失败");
         }
     }
+    /**
+     * 查询+分页
+     * @param brand
+     * @param page
+     * @param rows
+     * @return
+     */
+    @RequestMapping("/search")
+    public PageResult search(@RequestBody TbBrand brand, int page, int rows ){
+        return brandService.findPage(brand, page, rows);
+    }
 }
