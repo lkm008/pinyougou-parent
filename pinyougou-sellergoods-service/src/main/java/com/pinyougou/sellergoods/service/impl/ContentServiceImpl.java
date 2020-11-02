@@ -1,16 +1,16 @@
 package com.pinyougou.sellergoods.service.impl;
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.pinyougou.entity.PageResult;
 import com.pinyougou.mapper.TbContentMapper;
 import com.pinyougou.pojo.TbContent;
 import com.pinyougou.pojo.TbContentExample;
-import com.pinyougou.pojo.TbContentExample.Criteria;
 import com.pinyougou.sellergoods.service.ContentService;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import com.pinyougou.entity.PageResult;
+import java.util.List;
 
 /**
  * 服务实现层
@@ -84,7 +84,7 @@ public class ContentServiceImpl implements ContentService {
 		PageHelper.startPage(pageNum, pageSize);
 		
 		TbContentExample example=new TbContentExample();
-		Criteria criteria = example.createCriteria();
+		TbContentExample.Criteria criteria = example.createCriteria();
 		
 		if(content!=null){			
 						if(content.getTitle()!=null && content.getTitle().length()>0){

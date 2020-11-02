@@ -1,16 +1,15 @@
 package com.pinyougou.sellergoods.service.impl;
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.pinyougou.entity.PageResult;
 import com.pinyougou.mapper.TbAreasMapper;
 import com.pinyougou.pojo.TbAreas;
 import com.pinyougou.pojo.TbAreasExample;
-import com.pinyougou.pojo.TbAreasExample.Criteria;
 import com.pinyougou.sellergoods.service.AreasService;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import com.pinyougou.entity.PageResult;
+import java.util.List;
 
 /**
  * 服务实现层
@@ -84,7 +83,7 @@ public class AreasServiceImpl implements AreasService {
 		PageHelper.startPage(pageNum, pageSize);
 		
 		TbAreasExample example=new TbAreasExample();
-		Criteria criteria = example.createCriteria();
+		TbAreasExample.Criteria criteria = example.createCriteria();
 		
 		if(areas!=null){			
 						if(areas.getAreaid()!=null && areas.getAreaid().length()>0){

@@ -255,40 +255,4 @@ public class TbSeller implements Serializable {
     public void setBankAccount(String bankAccount) {
         this.bankAccount = bankAccount == null ? null : bankAccount.trim();
     }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", sellerId=").append(sellerId);
-        sb.append(", name=").append(name);
-        sb.append(", nickName=").append(nickName);
-        sb.append(", password=").append(password);
-        sb.append(", email=").append(email);
-        sb.append(", mobile=").append(mobile);
-        sb.append(", telephone=").append(telephone);
-        sb.append(", status=").append(status);
-        sb.append(", addressDetail=").append(addressDetail);
-        sb.append(", linkmanName=").append(linkmanName);
-        sb.append(", linkmanQq=").append(linkmanQq);
-        sb.append(", linkmanMobile=").append(linkmanMobile);
-        sb.append(", linkmanEmail=").append(linkmanEmail);
-        sb.append(", licenseNumber=").append(licenseNumber);
-        sb.append(", taxNumber=").append(taxNumber);
-        sb.append(", orgNumber=").append(orgNumber);
-        sb.append(", address=").append(address);
-        sb.append(", logoPic=").append(logoPic);
-        sb.append(", brief=").append(brief);
-        sb.append(", createTime=").append(createTime);
-        sb.append(", legalPerson=").append(legalPerson);
-        sb.append(", legalPersonCardId=").append(legalPersonCardId);
-        sb.append(", bankUser=").append(bankUser);
-        sb.append(", bankName=").append(bankName);
-        sb.append(", bankAccount=").append(bankAccount);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
 }

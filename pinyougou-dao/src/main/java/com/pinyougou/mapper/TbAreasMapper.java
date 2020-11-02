@@ -13,8 +13,8 @@ public interface TbAreasMapper {
 
     int deleteByPrimaryKey(Integer id);
 
-    
     int insert(TbAreas record);
+
     int insertSelective(TbAreas record);
 
     List<TbAreas> selectByExample(TbAreasExample example);

@@ -1,16 +1,16 @@
 package com.pinyougou.sellergoods.service.impl;
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.pinyougou.entity.PageResult;
 import com.pinyougou.mapper.TbPayLogMapper;
 import com.pinyougou.pojo.TbPayLog;
 import com.pinyougou.pojo.TbPayLogExample;
-import com.pinyougou.pojo.TbPayLogExample.Criteria;
 import com.pinyougou.sellergoods.service.PayLogService;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import com.pinyougou.entity.PageResult;
+import java.util.List;
 
 /**
  * 服务实现层
@@ -84,7 +84,7 @@ public class PayLogServiceImpl implements PayLogService {
 		PageHelper.startPage(pageNum, pageSize);
 		
 		TbPayLogExample example=new TbPayLogExample();
-		Criteria criteria = example.createCriteria();
+		TbPayLogExample.Criteria criteria = example.createCriteria();
 		
 		if(payLog!=null){			
 						if(payLog.getOutTradeNo()!=null && payLog.getOutTradeNo().length()>0){

@@ -44,19 +44,4 @@ public class TbSpecificationOption implements Serializable {
     public void setOrders(Integer orders) {
         this.orders = orders;
     }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", optionName=").append(optionName);
-        sb.append(", specId=").append(specId);
-        sb.append(", orders=").append(orders);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
 }

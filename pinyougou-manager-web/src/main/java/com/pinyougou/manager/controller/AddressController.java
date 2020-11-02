@@ -1,15 +1,14 @@
 package com.pinyougou.manager.controller;
-import java.util.List;
-
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.pinyougou.entity.PageResult;
+import com.pinyougou.entity.Result;
+import com.pinyougou.pojo.TbAddress;
+import com.pinyougou.sellergoods.service.AddressService;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.alibaba.dubbo.config.annotation.Reference;
-import com.pinyougou.pojo.TbAddress;
-import com.pinyougou.sellergoods.service.AddressService;
 
-import com.pinyougou.entity.PageResult;
-import com.pinyougou.entity.Result;
+import java.util.List;
 /**
  * controller
  * @author Administrator
@@ -101,7 +100,7 @@ public class AddressController {
 	
 		/**
 	 * 查询+分页
-	 * @param brand
+	 * @param
 	 * @param page
 	 * @param rows
 	 * @return

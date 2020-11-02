@@ -1,16 +1,16 @@
 package com.pinyougou.sellergoods.service.impl;
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.pinyougou.entity.PageResult;
 import com.pinyougou.mapper.TbGoodsDescMapper;
 import com.pinyougou.pojo.TbGoodsDesc;
 import com.pinyougou.pojo.TbGoodsDescExample;
-import com.pinyougou.pojo.TbGoodsDescExample.Criteria;
 import com.pinyougou.sellergoods.service.GoodsDescService;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import com.pinyougou.entity.PageResult;
+import java.util.List;
 
 /**
  * 服务实现层
@@ -84,7 +84,7 @@ public class GoodsDescServiceImpl implements GoodsDescService {
 		PageHelper.startPage(pageNum, pageSize);
 		
 		TbGoodsDescExample example=new TbGoodsDescExample();
-		Criteria criteria = example.createCriteria();
+		TbGoodsDescExample.Criteria criteria = example.createCriteria();
 		
 		if(goodsDesc!=null){			
 						if(goodsDesc.getIntroduction()!=null && goodsDesc.getIntroduction().length()>0){

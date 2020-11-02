@@ -74,22 +74,4 @@ public class TbGoodsDesc implements Serializable {
     public void setSaleService(String saleService) {
         this.saleService = saleService == null ? null : saleService.trim();
     }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", goodsId=").append(goodsId);
-        sb.append(", introduction=").append(introduction);
-        sb.append(", specificationItems=").append(specificationItems);
-        sb.append(", customAttributeItems=").append(customAttributeItems);
-        sb.append(", itemImages=").append(itemImages);
-        sb.append(", packageList=").append(packageList);
-        sb.append(", saleService=").append(saleService);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
 }

@@ -126,27 +126,4 @@ public class TbSeckillOrder implements Serializable {
     public void setTransactionId(String transactionId) {
         this.transactionId = transactionId == null ? null : transactionId.trim();
     }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", seckillId=").append(seckillId);
-        sb.append(", money=").append(money);
-        sb.append(", userId=").append(userId);
-        sb.append(", sellerId=").append(sellerId);
-        sb.append(", createTime=").append(createTime);
-        sb.append(", payTime=").append(payTime);
-        sb.append(", status=").append(status);
-        sb.append(", receiverAddress=").append(receiverAddress);
-        sb.append(", receiverMobile=").append(receiverMobile);
-        sb.append(", receiver=").append(receiver);
-        sb.append(", transactionId=").append(transactionId);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
 }

@@ -236,38 +236,4 @@ public class TbItem implements Serializable {
     public void setSeller(String seller) {
         this.seller = seller == null ? null : seller.trim();
     }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", title=").append(title);
-        sb.append(", sellPoint=").append(sellPoint);
-        sb.append(", price=").append(price);
-        sb.append(", stockCount=").append(stockCount);
-        sb.append(", num=").append(num);
-        sb.append(", barcode=").append(barcode);
-        sb.append(", image=").append(image);
-        sb.append(", categoryid=").append(categoryid);
-        sb.append(", status=").append(status);
-        sb.append(", createTime=").append(createTime);
-        sb.append(", updateTime=").append(updateTime);
-        sb.append(", itemSn=").append(itemSn);
-        sb.append(", costPirce=").append(costPirce);
-        sb.append(", marketPrice=").append(marketPrice);
-        sb.append(", isDefault=").append(isDefault);
-        sb.append(", goodsId=").append(goodsId);
-        sb.append(", sellerId=").append(sellerId);
-        sb.append(", cartThumbnail=").append(cartThumbnail);
-        sb.append(", category=").append(category);
-        sb.append(", brand=").append(brand);
-        sb.append(", spec=").append(spec);
-        sb.append(", seller=").append(seller);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
 }

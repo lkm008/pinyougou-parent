@@ -125,27 +125,4 @@ public class TbAddress implements Serializable {
     public void setAlias(String alias) {
         this.alias = alias == null ? null : alias.trim();
     }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", userId=").append(userId);
-        sb.append(", provinceId=").append(provinceId);
-        sb.append(", cityId=").append(cityId);
-        sb.append(", townId=").append(townId);
-        sb.append(", mobile=").append(mobile);
-        sb.append(", address=").append(address);
-        sb.append(", contact=").append(contact);
-        sb.append(", isDefault=").append(isDefault);
-        sb.append(", notes=").append(notes);
-        sb.append(", createDate=").append(createDate);
-        sb.append(", alias=").append(alias);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
 }

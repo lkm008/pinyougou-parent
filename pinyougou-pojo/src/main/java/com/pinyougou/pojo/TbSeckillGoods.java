@@ -166,31 +166,4 @@ public class TbSeckillGoods implements Serializable {
     public void setIntroduction(String introduction) {
         this.introduction = introduction == null ? null : introduction.trim();
     }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", goodsId=").append(goodsId);
-        sb.append(", itemId=").append(itemId);
-        sb.append(", title=").append(title);
-        sb.append(", smallPic=").append(smallPic);
-        sb.append(", price=").append(price);
-        sb.append(", costPrice=").append(costPrice);
-        sb.append(", sellerId=").append(sellerId);
-        sb.append(", createTime=").append(createTime);
-        sb.append(", checkTime=").append(checkTime);
-        sb.append(", status=").append(status);
-        sb.append(", startTime=").append(startTime);
-        sb.append(", endTime=").append(endTime);
-        sb.append(", num=").append(num);
-        sb.append(", stockCount=").append(stockCount);
-        sb.append(", introduction=").append(introduction);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
 }

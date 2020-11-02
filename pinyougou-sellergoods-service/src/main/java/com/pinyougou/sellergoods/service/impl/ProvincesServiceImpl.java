@@ -1,16 +1,16 @@
 package com.pinyougou.sellergoods.service.impl;
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.pinyougou.entity.PageResult;
 import com.pinyougou.mapper.TbProvincesMapper;
 import com.pinyougou.pojo.TbProvinces;
 import com.pinyougou.pojo.TbProvincesExample;
-import com.pinyougou.pojo.TbProvincesExample.Criteria;
 import com.pinyougou.sellergoods.service.ProvincesService;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import com.pinyougou.entity.PageResult;
+import java.util.List;
 
 /**
  * 服务实现层
@@ -84,7 +84,7 @@ public class ProvincesServiceImpl implements ProvincesService {
 		PageHelper.startPage(pageNum, pageSize);
 		
 		TbProvincesExample example=new TbProvincesExample();
-		Criteria criteria = example.createCriteria();
+		TbProvincesExample.Criteria criteria = example.createCriteria();
 		
 		if(provinces!=null){			
 						if(provinces.getProvinceid()!=null && provinces.getProvinceid().length()>0){

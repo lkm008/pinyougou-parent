@@ -1,16 +1,16 @@
 package com.pinyougou.sellergoods.service.impl;
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.pinyougou.entity.PageResult;
 import com.pinyougou.mapper.TbFreightTemplateMapper;
 import com.pinyougou.pojo.TbFreightTemplate;
 import com.pinyougou.pojo.TbFreightTemplateExample;
-import com.pinyougou.pojo.TbFreightTemplateExample.Criteria;
 import com.pinyougou.sellergoods.service.FreightTemplateService;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import com.pinyougou.entity.PageResult;
+import java.util.List;
 
 /**
  * 服务实现层
@@ -84,7 +84,7 @@ public class FreightTemplateServiceImpl implements FreightTemplateService {
 		PageHelper.startPage(pageNum, pageSize);
 		
 		TbFreightTemplateExample example=new TbFreightTemplateExample();
-		Criteria criteria = example.createCriteria();
+		TbFreightTemplateExample.Criteria criteria = example.createCriteria();
 		
 		if(freightTemplate!=null){			
 						if(freightTemplate.getSellerId()!=null && freightTemplate.getSellerId().length()>0){

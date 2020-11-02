@@ -105,25 +105,4 @@ public class TbOrderItem implements Serializable {
     public void setSellerId(String sellerId) {
         this.sellerId = sellerId == null ? null : sellerId.trim();
     }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", itemId=").append(itemId);
-        sb.append(", goodsId=").append(goodsId);
-        sb.append(", orderId=").append(orderId);
-        sb.append(", title=").append(title);
-        sb.append(", price=").append(price);
-        sb.append(", num=").append(num);
-        sb.append(", totalFee=").append(totalFee);
-        sb.append(", picPath=").append(picPath);
-        sb.append(", sellerId=").append(sellerId);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
 }

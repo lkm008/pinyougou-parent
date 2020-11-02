@@ -1,16 +1,15 @@
 package com.pinyougou.sellergoods.service.impl;
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.pinyougou.entity.PageResult;
 import com.pinyougou.mapper.TbCitiesMapper;
 import com.pinyougou.pojo.TbCities;
 import com.pinyougou.pojo.TbCitiesExample;
-import com.pinyougou.pojo.TbCitiesExample.Criteria;
 import com.pinyougou.sellergoods.service.CitiesService;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import com.pinyougou.entity.PageResult;
+import java.util.List;
 
 /**
  * 服务实现层
@@ -84,7 +83,7 @@ public class CitiesServiceImpl implements CitiesService {
 		PageHelper.startPage(pageNum, pageSize);
 		
 		TbCitiesExample example=new TbCitiesExample();
-		Criteria criteria = example.createCriteria();
+		TbCitiesExample.Criteria criteria = example.createCriteria();
 		
 		if(cities!=null){			
 						if(cities.getCityid()!=null && cities.getCityid().length()>0){

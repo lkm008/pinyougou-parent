@@ -34,18 +34,4 @@ public class TbProvinces implements Serializable {
     public void setProvince(String province) {
         this.province = province == null ? null : province.trim();
     }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", provinceid=").append(provinceid);
-        sb.append(", province=").append(province);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
 }

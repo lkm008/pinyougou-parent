@@ -1,16 +1,16 @@
 package com.pinyougou.sellergoods.service.impl;
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.pinyougou.entity.PageResult;
 import com.pinyougou.mapper.TbSpecificationMapper;
 import com.pinyougou.pojo.TbSpecification;
 import com.pinyougou.pojo.TbSpecificationExample;
-import com.pinyougou.pojo.TbSpecificationExample.Criteria;
 import com.pinyougou.sellergoods.service.SpecificationService;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import com.pinyougou.entity.PageResult;
+import java.util.List;
 
 /**
  * 服务实现层
@@ -84,7 +84,7 @@ public class SpecificationServiceImpl implements SpecificationService {
 		PageHelper.startPage(pageNum, pageSize);
 		
 		TbSpecificationExample example=new TbSpecificationExample();
-		Criteria criteria = example.createCriteria();
+		TbSpecificationExample.Criteria criteria = example.createCriteria();
 		
 		if(specification!=null){			
 						if(specification.getSpecName()!=null && specification.getSpecName().length()>0){

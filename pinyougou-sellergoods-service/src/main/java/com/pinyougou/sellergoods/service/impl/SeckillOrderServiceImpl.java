@@ -1,16 +1,16 @@
 package com.pinyougou.sellergoods.service.impl;
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.pinyougou.entity.PageResult;
 import com.pinyougou.mapper.TbSeckillOrderMapper;
 import com.pinyougou.pojo.TbSeckillOrder;
 import com.pinyougou.pojo.TbSeckillOrderExample;
-import com.pinyougou.pojo.TbSeckillOrderExample.Criteria;
 import com.pinyougou.sellergoods.service.SeckillOrderService;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import com.pinyougou.entity.PageResult;
+import java.util.List;
 
 /**
  * 服务实现层
@@ -84,7 +84,7 @@ public class SeckillOrderServiceImpl implements SeckillOrderService {
 		PageHelper.startPage(pageNum, pageSize);
 		
 		TbSeckillOrderExample example=new TbSeckillOrderExample();
-		Criteria criteria = example.createCriteria();
+		TbSeckillOrderExample.Criteria criteria = example.createCriteria();
 		
 		if(seckillOrder!=null){			
 						if(seckillOrder.getUserId()!=null && seckillOrder.getUserId().length()>0){

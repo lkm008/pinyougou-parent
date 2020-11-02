@@ -74,22 +74,4 @@ public class TbContent implements Serializable {
     public void setSortOrder(Integer sortOrder) {
         this.sortOrder = sortOrder;
     }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", categoryId=").append(categoryId);
-        sb.append(", title=").append(title);
-        sb.append(", url=").append(url);
-        sb.append(", pic=").append(pic);
-        sb.append(", status=").append(status);
-        sb.append(", sortOrder=").append(sortOrder);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
 }
