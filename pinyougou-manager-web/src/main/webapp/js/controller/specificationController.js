@@ -68,13 +68,23 @@ app.controller('specificationController' ,function($scope,$controller   ,specifi
 	$scope.searchEntity={};//定义搜索对象 
 	
 	//搜索
-	$scope.search=function(page,rows){			
-		specificationService.search(page,rows,$scope.searchEntity).success(
-			function(response){
-				$scope.list=response.rows;	
-				$scope.paginationConf.totalItems=response.total;//更新总记录数
-			}			
+	$scope.search = function (page, rows) {
+		specificationService.search(page, rows, $scope.searchEntity).success(
+			function (response) {
+				$scope.list = response.rows;
+				$scope.paginationConf.totalItems = response.total;//更新总记录数
+			}
 		);
+	};
+
+	//新增选项行
+	//新增选项行
+	$scope.addTableRow = function () {
+		$scope.entity.specificationOptionList.push({});
+	};
+	//批量选项删除
+	$scope.deleTableRow=function(index){
+		$scope.entity.specificationOptionList.splice(index,1);//删除
 	}
     
 });	
