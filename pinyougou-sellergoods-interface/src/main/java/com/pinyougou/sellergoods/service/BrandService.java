@@ -17,9 +17,15 @@ public interface BrandService {
     List<TbBrand> findAll();
 
     String test2();
-
+    /**
+     * 返回分页列表
+     * @return
+     */
     PageResult findPage(int pageNum, int pageSize);
 
+	/**
+	 * 增加
+	*/
     public void add(TbBrand brand);
 
     /**
@@ -37,5 +43,12 @@ public interface BrandService {
      * @param ids
      */
     public void delete(Long [] ids);
+
+	/**
+	 * 分页
+	 * @param pageNum 当前页 码
+	 * @param pageSize 每页记录数
+	 * @return
+	 */
     public PageResult findPage(TbBrand brand, int pageNum,int pageSize);
 }
