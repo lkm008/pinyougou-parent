@@ -65,7 +65,7 @@ public class PayLogServiceImpl implements PayLogService {
 	 */
 	@Override
 	public TbPayLog findOne(Long id){
-		return payLogMapper.selectByPrimaryKey(id);
+		return payLogMapper.selectByPrimaryKey(id.toString());
 	}
 
 	/**
@@ -74,7 +74,7 @@ public class PayLogServiceImpl implements PayLogService {
 	@Override
 	public void delete(Long[] ids) {
 		for(Long id:ids){
-			payLogMapper.deleteByPrimaryKey(id);
+			payLogMapper.deleteByPrimaryKey(id.toString());
 		}		
 	}
 	

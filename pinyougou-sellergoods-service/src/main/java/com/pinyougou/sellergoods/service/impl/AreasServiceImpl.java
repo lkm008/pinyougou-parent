@@ -65,7 +65,7 @@ public class AreasServiceImpl implements AreasService {
 	 */
 	@Override
 	public TbAreas findOne(Long id){
-		return areasMapper.selectByPrimaryKey(id);
+		return areasMapper.selectByPrimaryKey(Long.valueOf(id).intValue());
 	}
 
 	/**
@@ -74,7 +74,7 @@ public class AreasServiceImpl implements AreasService {
 	@Override
 	public void delete(Long[] ids) {
 		for(Long id:ids){
-			areasMapper.deleteByPrimaryKey(id);
+			areasMapper.deleteByPrimaryKey(Long.valueOf(id).intValue());
 		}		
 	}
 	

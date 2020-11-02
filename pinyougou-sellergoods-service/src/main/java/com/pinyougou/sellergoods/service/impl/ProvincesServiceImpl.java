@@ -65,7 +65,7 @@ public class ProvincesServiceImpl implements ProvincesService {
 	 */
 	@Override
 	public TbProvinces findOne(Long id){
-		return provincesMapper.selectByPrimaryKey(id);
+		return provincesMapper.selectByPrimaryKey(Long.valueOf(id).intValue());
 	}
 
 	/**
@@ -74,7 +74,7 @@ public class ProvincesServiceImpl implements ProvincesService {
 	@Override
 	public void delete(Long[] ids) {
 		for(Long id:ids){
-			provincesMapper.deleteByPrimaryKey(id);
+			provincesMapper.deleteByPrimaryKey(Long.valueOf(id).intValue());
 		}		
 	}
 	

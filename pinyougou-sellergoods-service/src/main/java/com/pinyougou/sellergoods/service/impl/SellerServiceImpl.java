@@ -65,7 +65,7 @@ public class SellerServiceImpl implements SellerService {
 	 */
 	@Override
 	public TbSeller findOne(Long id){
-		return sellerMapper.selectByPrimaryKey(id);
+		return sellerMapper.selectByPrimaryKey(id.toString());
 	}
 
 	/**
@@ -74,7 +74,7 @@ public class SellerServiceImpl implements SellerService {
 	@Override
 	public void delete(Long[] ids) {
 		for(Long id:ids){
-			sellerMapper.deleteByPrimaryKey(id);
+			sellerMapper.deleteByPrimaryKey(id.toString());
 		}		
 	}
 	

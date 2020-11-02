@@ -65,7 +65,7 @@ public class CitiesServiceImpl implements CitiesService {
 	 */
 	@Override
 	public TbCities findOne(Long id){
-		return citiesMapper.selectByPrimaryKey(id);
+		return citiesMapper.selectByPrimaryKey(Long.valueOf(id).intValue());
 	}
 
 	/**
@@ -74,7 +74,7 @@ public class CitiesServiceImpl implements CitiesService {
 	@Override
 	public void delete(Long[] ids) {
 		for(Long id:ids){
-			citiesMapper.deleteByPrimaryKey(id);
+			citiesMapper.deleteByPrimaryKey(Long.valueOf(id).intValue());
 		}		
 	}
 	
