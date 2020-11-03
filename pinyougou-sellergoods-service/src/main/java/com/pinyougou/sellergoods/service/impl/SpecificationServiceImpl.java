@@ -9,6 +9,7 @@ import com.pinyougou.mapper.TbSpecificationOptionMapper;
 import com.pinyougou.pojo.TbSpecification;
 import com.pinyougou.pojo.TbSpecificationExample;
 import com.pinyougou.pojo.TbSpecificationOption;
+import com.pinyougou.pojo.TbSpecificationOptionExample;
 import com.pinyougou.pojogroup.Specification;
 import com.pinyougou.sellergoods.service.SpecificationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,8 +74,16 @@ public class SpecificationServiceImpl implements SpecificationService {
 	 * @return
 	 */
 	@Override
-	public TbSpecification findOne(Long id){
-		return specificationMapper.selectByPrimaryKey(id);
+	public Specification findOne(Long id){
+		TbSpecification tbSpecification = specificationMapper.selectByPrimaryKey(id);
+		TbSpecificationOptionExample example = new TbSpecificationOptionExample();
+		TbSpecificationOptionExample.Criteria criteria = example.createCriteria();
+		criteria.andSpecIdEqualTo(id);
+		List<TbSpecificationOption> optionList = specificationOptionMapper.selectByExample(example);
+		Specification spec = new Specification();
+		spec.setSpecification(tbSpecification);
+		spec.setSpecificationOptionList(optionList);
+		return spec;
 	}
 
 	/**
