@@ -26,15 +26,15 @@ app.controller('specificationController' ,function($scope,$controller   ,specifi
 	$scope.findOne=function(id){				
 		specificationService.findOne(id).success(
 			function(response){
-				$scope.entity= response;					
+				$scope.entity= response;
 			}
 		);				
 	}
 	
 	//保存 
 	$scope.save=function(){				
-		var serviceObject;//服务层对象  				
-		if($scope.entity.id!=null){//如果有ID
+		var serviceObject;//服务层对象
+		if($scope.entity.specification.id!=null){//如果有ID
 			serviceObject=specificationService.update( $scope.entity ); //修改  
 		}else{
 			serviceObject=specificationService.add( $scope.entity  );//增加 

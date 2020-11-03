@@ -62,10 +62,22 @@ public class SpecificationServiceImpl implements SpecificationService {
 	
 	/**
 	 * 修改
-	 */
+     * @param specification
+     */
 	@Override
-	public void update(TbSpecification specification){
-		specificationMapper.updateByPrimaryKey(specification);
+	public void update(Specification specification){
+		specificationMapper.updateByPrimaryKey(specification.getSpecification());
+
+		TbSpecificationOptionExample example = new TbSpecificationOptionExample();
+		TbSpecificationOptionExample.Criteria criteria = example.createCriteria();
+		criteria.andSpecIdEqualTo(specification.getSpecification().getId());
+		specificationOptionMapper.deleteByExample(example);
+
+		for (TbSpecificationOption specificationOption:specification.getSpecificationOptionList()) {
+			specificationOption.setSpecId(specification.getSpecification().getId());
+			specificationOptionMapper.insert(specificationOption);
+		}
+
 	}	
 	
 	/**
