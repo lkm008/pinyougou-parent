@@ -29,7 +29,10 @@ app.controller('typeTemplateController',function($scope,$controller,
 	$scope.findOne=function(id){				
 		typeTemplateService.findOne(id).success(
 			function(response){
-				$scope.entity= response;					
+				$scope.entity= response;
+				$scope.entity.brandIds = JSON.parse($scope.entity.brandIds);
+				$scope.entity.specIds = JSON.parse($scope.entity.specIds);
+				$scope.entity.customAttributeItems = JSON.parse($scope.entity.customAttributeItems);
 			}
 		);				
 	}
