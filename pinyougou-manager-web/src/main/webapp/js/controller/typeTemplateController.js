@@ -68,13 +68,14 @@ app.controller('typeTemplateController' ,function($scope,$controller   ,typeTemp
 	$scope.searchEntity={};//定义搜索对象 
 	
 	//搜索
-	$scope.search=function(page,rows){			
-		typeTemplateService.search(page,rows,$scope.searchEntity).success(
-			function(response){
-				$scope.list=response.rows;	
-				$scope.paginationConf.totalItems=response.total;//更新总记录数
-			}			
+	$scope.search = function (page, rows) {
+		typeTemplateService.search(page, rows, $scope.searchEntity).success(
+			function (response) {
+				$scope.list = response.rows;
+				$scope.paginationConf.totalItems = response.total;//更新总记录数
+			}
 		);
-	}
+	};
+	$scope.brandList={data:[{id:1,text:'联想'},{id:2,text:'华为'},{id:3,text:'小米'}]};//品牌列表
     
 });	
