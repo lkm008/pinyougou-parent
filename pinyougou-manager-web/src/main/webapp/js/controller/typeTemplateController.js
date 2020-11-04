@@ -105,5 +105,9 @@ app.controller('typeTemplateController',function($scope,$controller,
 	$scope.addTableRow=function(){
 		$scope.entity.customAttributeItems.push({});
 	}
+	//删除扩展属性行
+	$scope.deleTableRow=function(index){
+		$scope.entity.customAttributeItems.splice(index,1);//删除
+	}
 
 });
