@@ -1,5 +1,8 @@
  //控制层 
-app.controller('typeTemplateController' ,function($scope,$controller   ,typeTemplateService,brandService){
+app.controller('typeTemplateController',function($scope,$controller,
+												 typeTemplateService,
+												  specificationService,
+												  brandService){
 	
 	$controller('baseController',{$scope:$scope});//继承
 	
@@ -76,15 +79,31 @@ app.controller('typeTemplateController' ,function($scope,$controller   ,typeTemp
 			}
 		);
 	};
+	// $scope.brandList={data:[{id:1,text:'联想'},{id:2,text:'华为'},{id:3,text:'小米'}]};//品牌列表
+	$scope.brandList={data:[]};//品牌列表
 	//读取品牌列表
-	$scope.brandList = {data: []};
 	$scope.findBrandList = function () {
 		brandService.selectOptionList().success(
 			function (response) {
 				$scope.brandList = {data: response};
 			}
-		)
+		);
 	};
-	$scope.specList={data:[{id:1,text:'联想'},{id:2,text:'华为'},{id:3,text:'小米'}]};//品牌列表
+
+	// $scope.specList={data:[{id:1,text:'联想'},{id:2,text:'华为'},{id:3,text:'小米'}]};//规格列表
+	$scope.specList={data:[]};//品牌列表
+	//读取规格列表
+	$scope.findSpecList = function () {
+		specificationService.selectOptionList().success(
+			function (response) {
+				$scope.specList = {data: response};
+			}
+		);
+	};
+
+	//新增扩展属性行
+	$scope.addTableRow=function(){
+		$scope.entity.customAttributeItems.push({});
+	}
 
 });
