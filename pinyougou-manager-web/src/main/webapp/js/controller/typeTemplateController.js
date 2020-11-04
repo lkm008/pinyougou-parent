@@ -76,14 +76,15 @@ app.controller('typeTemplateController' ,function($scope,$controller   ,typeTemp
 			}
 		);
 	};
-	// $scope.brandList={data:[{id:1,text:'联想'},{id:2,text:'华为'},{id:3,text:'小米'}]};//品牌列表
-	$scope.brandList = {data: []};
 	//读取品牌列表
-	$scope.findBrandList=function () {
+	$scope.brandList = {data: []};
+	$scope.findBrandList = function () {
 		brandService.selectOptionList().success(
 			function (response) {
 				$scope.brandList = {data: response};
 			}
 		)
-	}
-});	
+	};
+	$scope.specList={data:[{id:1,text:'联想'},{id:2,text:'华为'},{id:3,text:'小米'}]};//品牌列表
+
+});

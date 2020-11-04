@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
+
 /**
  * controller
  * @author Administrator
@@ -102,14 +104,23 @@ public class SpecificationController {
 	
 		/**
 	 * 查询+分页
-	 * @param brand
-	 * @param page
-	 * @param rows
-	 * @return
+	 * @param specification 规格
+	 * @param page 当前页
+	 * @param rows 每页的记录数
+	 * @return 结果集
 	 */
 	@RequestMapping("/search")
 	public PageResult search(@RequestBody TbSpecification specification, int page, int rows  ){
 		return specificationService.findPage(specification, page, rows);		
+	}
+
+	/**
+	 * 列表数据
+	 * @return
+	 */
+	@RequestMapping("/selectOptionList")
+	public List<Map> selectOptionList(){
+		return specificationService.selectOptionList();
 	}
 	
 }

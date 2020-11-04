@@ -10,6 +10,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
+import java.util.ListIterator;
+import java.util.Map;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath*:spring/applicationContext*.xml")
@@ -31,5 +33,18 @@ public class TestDao {
             System.out.println(brand);
         }
     }
+    @Test
+    public void testDao2(){
+        System.out.println(sqlSessionFactory);
+        SqlSession session = sqlSessionFactory.openSession();
+        TbSpecificationMapper specificationMapper = session.getMapper(TbSpecificationMapper.class);
+        List<Map> maps = specificationMapper.selectOptionList();
+        ListIterator<Map> iterator = maps.listIterator();
+        while (iterator.hasNext()){
+            Map next = iterator.next();
+            System.out.println(next);
+        }
+    }
+
 
 }
