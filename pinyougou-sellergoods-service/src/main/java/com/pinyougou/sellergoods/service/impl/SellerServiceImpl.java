@@ -60,12 +60,12 @@ public class SellerServiceImpl implements SellerService {
 	
 	/**
 	 * 根据ID获取实体
-	 * @param id
+	 * @param sellerId
 	 * @return
 	 */
 	@Override
-	public TbSeller findOne(Long id){
-		return sellerMapper.selectByPrimaryKey(id.toString());
+	public TbSeller findOne(String sellerId){
+		return sellerMapper.selectByPrimaryKey(sellerId);
 	}
 
 	/**
