@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/security
+http://www.springframework.org/schema/security/spring-security.xsd">
+    <!-- 以下页面不被拦截 -->
+    <!--"pattern"
+"security"
+request-matcher-ref
+auto-config
+use-expressions
+create-session
+security-context-repository-ref
+request-matcher
+servlet-api-provision
+jaas-api-provision
+access-decision-manager-ref
+"realm"
+entry-point-ref
+once-per-request
+disable-url-rewriting
+"name"
+authentication-manager-ref-->
+    <!--intercept-url
+access-denied-handler
+form-login
+openid-login
+"x509"
+security:jee
+http-basic
+"logout"
+session-management
+remember-me
+"anonymous"
+port-mappings
+security:custom-filter
+security:request-cache
+expression-handler
+security:headers
+security:csrf-->
+    <http pattern="/login.html" security="none" ></http>
+    <http pattern="/css/**" security="none"></http>
+    <http pattern="/img/**" security="none"></http>
+    <http pattern="/js/**" security="none"></http>
+    <http pattern="/plugins/**" security="none"></http>
+    <!-- 页面拦截规则 -->
+    <http use-expressions="false">
+        <intercept-url pattern="/*" access="ROLE_ADMIN" />
+        <form-login login-page="/login.html" default-target-url="/admin/index.html"
+                    authentication-failure-url="/login.html" always-use-default-target="true"/>
+        <csrf disabled="true"/>
+        <headers>
+            <frame-options policy="SAMEORIGIN"/>
+        </headers>
+    </http>
+    <!-- 页面拦截规则 -->
+   <!-- <http use-expressions="false">
+        <intercept-url pattern="/**" access="ROLE_USER" />
+        <form-login/>
+    </http>-->
+    <!-- 认证管理器 -->
+    <authentication-manager>
+        <authentication-provider>
+            <user-service>
+                <user name="admin" password="123456" authorities="ROLE_ADMIN"/>
+                <user name="sunwukong" password="dasheng" authorities="ROLE_ADMIN"/>
+            </user-service>
+        </authentication-provider>
+    </authentication-manager>
+</beans:beans>
