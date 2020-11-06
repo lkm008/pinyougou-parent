@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * controller
+ * @author Administrator
+ *
+ */
 @RestController
 @RequestMapping("/brand")
 public class BrandController {
@@ -33,10 +38,20 @@ public class BrandController {
     public String test2(){
         return brandService.test2();
     }
+    /**
+     * 返回全部列表
+     * @return
+     */
     @RequestMapping("/findPage")
     public PageResult findPage(int page,int rows){
         return brandService.findPage(page, rows);
     }
+
+	/**
+	 * 增加
+	 * @param brand
+	 * @return
+	 */
     @RequestMapping("/add")
     public Result add(@RequestBody TbBrand brand){
         try {
@@ -47,6 +62,12 @@ public class BrandController {
             return new Result(false, "增加失败");
         }
     }
+
+	/**
+	 * 修改
+	 * @param brand
+	 * @return
+	 */
     @RequestMapping("/update")
     public Result update(@RequestBody TbBrand brand){
         try {

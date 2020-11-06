@@ -1,4 +1,4 @@
-package com.pinyougou.manager.controller;
+package com.pinyougou.shop.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.pinyougou.entity.PageResult;
@@ -27,7 +27,7 @@ public class TypeTemplateController {
 	 * @return
 	 */
 	@RequestMapping("/findAll")
-	public List<TbTypeTemplate> findAll(){
+	public List<TbTypeTemplate> findAll(){			
 		return typeTemplateService.findAll();
 	}
 	
