@@ -55,6 +55,7 @@ security:csrf-->
         <headers>
             <frame-options policy="SAMEORIGIN"/>
         </headers>
+        <logout/>
     </http>
     <!-- 页面拦截规则 -->
    <!-- <http use-expressions="false">
