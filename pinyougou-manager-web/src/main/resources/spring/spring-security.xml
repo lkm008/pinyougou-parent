@@ -47,8 +47,8 @@ security:csrf-->
     <http pattern="/js/**" security="none"></http>
     <http pattern="/plugins/**" security="none"></http>
     <!-- 页面拦截规则 -->
-   <!-- <http use-expressions="false">
-        <intercept-url pattern="/*" access="ROLE_ADMIN" />
+    <http use-expressions="false">
+        <intercept-url pattern="/**" access="ROLE_ADMIN" />
         <form-login login-page="/login.html" default-target-url="/admin/index.html"
                     authentication-failure-url="/login.html" always-use-default-target="true"/>
         <csrf disabled="true"/>
@@ -56,7 +56,7 @@ security:csrf-->
             <frame-options policy="SAMEORIGIN"/>
         </headers>
         <logout/>
-    </http>-->
+    </http>
 
     <!-- 认证管理器 -->
     <authentication-manager>
